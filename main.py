@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
-from crypto.des import cifrar_DES, descifrar_DES
-from crypto.cesar import cifrar_cesar, descifrar_cesar
-from crypto.playfair import cifrar_playfair, descifrar_playfair
-from crypto.huffman import compress as huffman_compress, decompress as huffman_decompress, tree_to_dict
-from crypto.rsa import generar_claves, cifrar as rsa_cifrar, descifrar as rsa_descifrar
+from cryptos.des import cifrar_DES, descifrar_DES
+from cryptos.cesar import cifrar_cesar, descifrar_cesar
+from cryptos.playfair import cifrar_playfair, descifrar_playfair
+from cryptos.huffman import compress as huffman_compress, decompress as huffman_decompress, tree_to_dict
+from cryptos.rsa import generar_claves, cifrar as rsa_cifrar, descifrar as rsa_descifrar
 
 
 app = Flask(__name__)
 CORS(app)
+
+
 
 @app.route('/')
 def hello_world():
@@ -25,6 +27,10 @@ def show_huffman():
 @app.route('/cesar')
 def show_cesar():
     return render_template('cesar.html')
+
+@app.route('/vigenere')
+def show_vigenere():
+    return render_template('vigenere.html')
 
 @app.route('/playfair')
 def show_playfair():
