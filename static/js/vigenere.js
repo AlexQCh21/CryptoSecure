@@ -1,73 +1,72 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const panel = document.querySelector('.cesar-panel');
-  if (!panel) return;
-  const btnCifrar = panel.querySelector('#btn_cifrar');
-  const inputTexto = panel.querySelectorAll('textarea')[0]; // Primer textarea
-  const inputDesplazamiento = panel.querySelectorAll('textarea')[1]; // Segundo textarea
-  const resultadoBox = panel.querySelectorAll('textarea')[2]; // Tercer textarea
+document.addEventListener('DOMContentLoaded', function () {
+  const panels = document.querySelectorAll('.vigenere-panel');
+  if (panels.length < 2) return;
 
-  btnCifrar.addEventListener('click', async function() {
-    const texto = inputTexto.value;
-    const desplazamiento = inputDesplazamiento.value.trim();
-    resultadoBox.value = 'Cifrando...';
+  // Panel Cifrar
+  const btnCifrar = document.getElementById('btn_cifrar');
+  const inputTextoCifrar = document.getElementById('texto_cifrar');
+  const inputClaveCifrar = document.getElementById('clave_cifrar');
+  const resultadoCifrar = document.getElementById('resultado_cifrar');
 
-    if (!desplazamiento.match(/^-?\d+$/)) {
-      resultadoBox.value = 'El desplazamiento debe ser un número entero.';
+  btnCifrar.addEventListener('click', async function () {
+    const texto = inputTextoCifrar.value.trim();
+    const clave = inputClaveCifrar.value.trim();
+
+    resultadoCifrar.value = 'Cifrando...';
+
+    if (!clave.match(/^[a-zA-Z]+$/)) {
+      resultadoCifrar.value = 'La clave debe contener solo letras.';
       return;
     }
 
     try {
-      const response = await fetch('/api/cifrar_cesar', {
+      const response = await fetch('/api/cifrar_vigenere', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ texto: texto, desplazamiento: parseInt(desplazamiento, 10) })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ texto: texto, clave: clave })
       });
       const data = await response.json();
       if (response.ok) {
-        resultadoBox.value = data.resultado;
+        resultadoCifrar.value = data.resultado;
       } else {
-        resultadoBox.value = data.error || 'Error al cifrar';
+        resultadoCifrar.value = data.error || 'Error al cifrar';
       }
     } catch (err) {
-      resultadoBox.value = 'Error de conexión o del servidor';
+      resultadoCifrar.value = 'Error de conexión o del servidor';
     }
   });
 
-   // Para descifrar
+  // Panel Descifrar
   const btnDescifrar = document.getElementById('btn_descifrar');
-  const inputTextoDescifrar = document.getElementById('ta_descifrar');
-  const inputDesplazamientoDescifrar = document.getElementById('ta_desplazamiento');
-  // El resultado es el siguiente textarea después del botón
-  const resultadoBoxDescifrar = btnDescifrar
-    ? btnDescifrar.parentElement.querySelectorAll('textarea')[2]
-    : null;
+  const inputTextoDescifrar = document.getElementById('texto_descifrar');
+  const inputClaveDescifrar = document.getElementById('clave_descifrar');
+  const resultadoDescifrar = document.getElementById('resultado_descifrar');
 
-  if (btnDescifrar && inputTextoDescifrar && inputDesplazamientoDescifrar && resultadoBoxDescifrar) {
-    btnDescifrar.addEventListener('click', async function() {
-      const texto = inputTextoDescifrar.value;
-      const desplazamiento = inputDesplazamientoDescifrar.value.trim();
-      resultadoBoxDescifrar.value = 'Descifrando...';
+  btnDescifrar.addEventListener('click', async function () {
+    const texto = inputTextoDescifrar.value.trim();
+    const clave = inputClaveDescifrar.value.trim();
 
-      if (!desplazamiento.match(/^-?\d+$/)) {
-        resultadoBoxDescifrar.value = 'El desplazamiento debe ser un número entero.';
-        return;
+    resultadoDescifrar.value = 'Descifrando...';
+
+    if (!clave.match(/^[a-zA-Z]+$/)) {
+      resultadoDescifrar.value = 'La clave debe contener solo letras.';
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/descifrar_vigenere', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ texto: texto, clave: clave })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        resultadoDescifrar.value = data.resultado;
+      } else {
+        resultadoDescifrar.value = data.error || 'Error al descifrar';
       }
-
-      try {
-        const response = await fetch('/api/descifrar_cesar', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ texto: texto, desplazamiento: parseInt(desplazamiento, 10) })
-        });
-        const data = await response.json();
-        if (response.ok) {
-          resultadoBoxDescifrar.value = data.resultado;
-        } else {
-          resultadoBoxDescifrar.value = data.error || 'Error al descifrar';
-        }
-      } catch (err) {
-        resultadoBoxDescifrar.value = 'Error de conexión o del servidor';
-      }
-    });
-  }
+    } catch (err) {
+      resultadoDescifrar.value = 'Error de conexión o del servidor';
+    }
+  });
 });

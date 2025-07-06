@@ -1,3 +1,37 @@
+function generarTablaPlayfair(clave){
+  const tabla = [];
+  const letras = [];
+  clave = clave.toUpperCase().replace(/J/g, "I");
+
+  for(let char of clave + "ABCDEFGHIKLMNOPQRSTUVWXYZ"){
+    if(char >= "A" && char <= "Z" && !letras.includes(char)){
+      letras.push(char);
+    }
+  }
+
+  for(let i = 0; i < 5; i++){
+    tabla.push(letras.slice(i * 5, i * 5 + 5));
+  }
+
+  return tabla;
+}
+
+function renderizarTabla(tabla){
+  const tablaHTML = document.getElementById("tabla_playfair");
+  tablaHTML.innerHTML = "";
+
+  for (let fila of tabla){
+    const tr = document.createElement("tr")
+    for(let letra of fila){
+      const td = document.createElement("td")
+      td.textContent = letra;
+      tr.appendChild(td);
+    }
+    tablaHTML.appendChild(tr);
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
   // CIFRAR
   const btnCifrar = document.getElementById('btn_cifrar');
@@ -9,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
     btnCifrar.addEventListener('click', async function() {
       const texto = inputTexto.value;
       const clave = inputClave.value;
+      const tabla = generarTablaPlayfair(clave);
+      renderizarTabla(tabla);
+
       resultadoBox.value = 'Cifrando...';
       if (!texto.trim() || !clave.trim()) {
         resultadoBox.value = 'Por favor ingresa el texto y la clave.';

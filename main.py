@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 from cryptos.des import cifrar_DES, descifrar_DES
 from cryptos.cesar import cifrar_cesar, descifrar_cesar
+from cryptos.vigenere import vigenere_encrypt, vigenere_decrypt
 from cryptos.playfair import cifrar_playfair, descifrar_playfair
 from cryptos.huffman import compress as huffman_compress, decompress as huffman_decompress, tree_to_dict
 from cryptos.rsa import generar_claves, cifrar as rsa_cifrar, descifrar as rsa_descifrar
@@ -102,6 +103,36 @@ def api_descifrar_cesar():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
     
+# Vigenere
+# Vigenere - cifrado
+@app.route('/api/cifrar_vigenere', methods=['POST'])
+def api_cifrar_vigenere():
+    data = request.get_json()
+    texto = data.get('texto', '')
+    clave = data.get('clave', '')
+
+    if not clave.isalpha():
+        return jsonify({'error': 'La clave debe contener solo letras.'}), 400
+    try:
+        resultado = vigenere_encrypt(texto, clave)
+        return jsonify({'resultado': resultado})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
+# Vigenere - descifrado
+@app.route('/api/descifrar_vigenere', methods=['POST'])
+def api_descifrar_vigenere():
+    data = request.get_json()
+    texto = data.get('texto', '')
+    clave = data.get('clave', '')
+
+    if not clave.isalpha():
+        return jsonify({'error': 'La clave debe contener solo letras'}), 400
+    try:
+        resultado = vigenere_decrypt(texto, clave)
+        return jsonify({'resultado': resultado})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500    
 # PLAYFAIR
 # Playfair - cifrado
 @app.route('/api/cifrar_playfair', methods=['POST'])

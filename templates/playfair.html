@@ -160,7 +160,8 @@
               <h1>Playfair</h1>
               <hr class="playfair-hr" />
 
-              <div class="playfair-panels">
+              <!-- Parte superior: cifrado y tabla -->
+              <div class="playfair-top">
                 <!-- Panel Cifrar -->
                 <div class="playfair-panel">
                   <div class="playfair-panel-header">
@@ -186,8 +187,14 @@
                     placeholder="El texto cifrado aparecerá aquí..."
                   ></textarea>
                 </div>
+                <div class= "playfair-table">
+                  <h3>Tabla Playfair</h3>
+                  <table id="tabla_playfair"></table>
+                </div>
+              </div>
                 <!-- Panel Descifrar -->
-                <div class="playfair-panel">
+              <div class="playfair-bottom">
+                <div class="playfair-panel" style="margin-top: 40px;">
                   <div class="playfair-panel-header">
                     <span>Descifrar</span>
                   </div>
@@ -211,9 +218,8 @@
                     placeholder="El texto descifrado aparecerá aquí..."
                   ></textarea>
                 </div>
-              </div>
+              </div>   
             </div>
-            <!--  -->
           </div>
         </div>
       </div>

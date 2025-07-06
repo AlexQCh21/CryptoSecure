@@ -1,4 +1,4 @@
-.playfair-container {
+.vigenere-container {
   font-family: 'Roboto Mono', monospace;
   color: #fff;
   padding: 2rem;
@@ -9,20 +9,7 @@
   margin: 0 auto;
 }
 
-.playfair-top{
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.playfair-bottom{
-  margin-top: 32px;
-  width: 100%;
-}
-
-
-.playfair-container h1 {
+.vigenere-container h1 {
   text-align: center;
   font-size: clamp(2rem, 6vw, 3.2rem);
   margin-bottom: 0.5rem;
@@ -30,14 +17,14 @@
   letter-spacing: 1px;
 }
 
-.playfair-hr {
+.vigenere-hr {
   margin: 0 auto 2rem auto;
   border: none;
   border-top: 2px solid #aaa;
   width: 90%;
 }
 
-.playfair-panels {
+.vigenere-panels {
   display: flex;
   gap: 1.5rem;
   margin-top: 1rem;
@@ -46,7 +33,7 @@
   justify-content: center;
 }
 
-.playfair-panel {
+.vigenere-panel {
   background: #405066;
   border-radius: 8px;
   padding: 1rem 1rem 1.2rem 1rem;
@@ -60,19 +47,19 @@
   border: 1px solid #aabac8;
 }
 
-.playfair-panel-header {
+.vigenere-panel-header {
   font-weight: 700;
   font-size: 1.08em;
   margin-bottom: 0.2em;
   letter-spacing: 0.5px;
 }
 
-.playfair-panel label {
+.vigenere-panel label {
   font-size: 0.99em;
   margin-top: 0.2em;
 }
 
-.playfair-panel textarea {
+.vigenere-panel textarea {
   width: 100%;
   min-height: 48px;
   border-radius: 6px;
@@ -86,7 +73,7 @@
   color: #28313a;
 }
 
-.playfair-btn {
+.vigenere-btn {
   border: 1px solid #fff;
   background: #293543;
   color: #fff;
@@ -101,44 +88,17 @@
   gap: 0.4em;
 }
 
-
-.playfair-table{
-  min-width: 300px;
-  border: 1px solid #ccc;
-  padding: 16px;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-}
-
-.playfair-table table{
-  width: 100px;
-  border-collapse: none;
-
-}
-
-.playfair-table td{
-  border: 1px solid #999;
-  padding: 20px;
-  font-weight: bold;
-  color: black;
-  font-size: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-
-.playfair-btn:hover {
+.vigenere-btn:hover {
   background: #232e38;
 }
 
 @media (max-width: 900px) {
-  .playfair-panels {
+  .vigenere-panels {
     flex-direction: column;
     gap: 1.2rem;
     align-items: stretch;
   }
-  .playfair-panel {
+  .vigenere-panel {
     min-width: 0;
     max-width: 100%;
   }
