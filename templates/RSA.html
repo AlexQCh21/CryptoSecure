@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="stylesheet" href="../static/css/rsa.css" />
+    <!-- font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>CryptoSecure</title>
+  </head>
+  <body>
+    <div class="contenedor_general">
+      <!-- menu -->
+      <div class="menu">
+        <ul class="contenedor_menu">
+          <li id="head_menu">CryptoSecure</li>
+          <div class="categoria">Asimétrico</div>
+          <a href="{{ url_for('show_rsa') }}">
+            <li>
+              <div class="icon icon_rotate">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e3e3e3"
+                >
+                  <path
+                    d="M280-400q-33 0-56.5-23.5T200-480q0-33 23.5-56.5T280-560q33 0 56.5 23.5T360-480q0 33-23.5 56.5T280-400Zm0 160q-100 0-170-70T40-480q0-100 70-170t170-70q67 0 121.5 33t86.5 87h352l120 120-180 180-80-60-80 60-85-60h-47q-32 54-86.5 87T280-240Zm0-80q56 0 98.5-34t56.5-86h125l58 41 82-61 71 55 75-75-40-40H435q-14-52-56.5-86T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Z"
+                  />
+                </svg>
+              </div>
+              <div class="title">RSA</div>
+            </li>
+          </a>
+          <div class="categoria">Simétrica</div>
+
+          <a href="{{ url_for('show_cesar') }}">
+            <li>
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e3e3e3"
+                >
+                  <path
+                    d="M200-160q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h160v80H200v480h160v80H200Zm240 80v-800h80v80h240q33 0 56.5 23.5T840-720v480q0 33-23.5 56.5T760-160H520v80h-80Zm80-160h240v-480H520v480Zm-320 0v-480 480Zm560 0v-480 480Z"
+                  />
+                </svg>
+              </div>
+              <div class="title">Cesar</div>
+            </li>
+          </a>
+
+          <a href="{{ url_for('show_playfair') }}">
+            <li>
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e3e3e3"
+                >
+                  <path
+                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"
+                  />
+                </svg>
+              </div>
+              <div class="title">Playfair</div>
+            </li>
+          </a>
+
+          <a href="{{ url_for('show_des') }}">
+            <li>
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e3e3e3"
+                >
+                  <path
+                    d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"
+                  />
+                </svg>
+              </div>
+              <div class="title">DES</div>
+            </li>
+          </a>
+
+          <div class="categoria">Compresión</div>
+
+          <a href="{{ url_for('show_huffman') }}">
+            <li>
+              <div class="icon icon_h">
+                <div class="numer">1</div>
+                <div class="numer">0</div>
+                <div class="numer">0</div>
+                <div class="numer">1</div>
+              </div>
+              <div class="title">Huffman</div>
+            </li>
+          </a>
+        </ul>
+      </div>
+
+      <!-- contenedor generico -->
+      <div class="contenedor">
+        <div class="contenedor_btn" onclick="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#e3e3e3"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-240h560v-400H200v400Zm0 80v80h560v-80H200Zm0 0v80-80Z"
+            />
+          </svg>
+        </div>
+
+        <div class="contenedor_hijo">
+          <div class="contenedor_central">
+            <!--  -->
+            <div class="rsa-container">
+              <h1>RSA</h1>
+              <hr class="rsa-hr" />
+
+              <!-- <form class="rsa-gen-form">
+                <input type="text" placeholder="p" />
+                <input type="text" placeholder="q" />
+                <button type="submit">Generar</button>
+              </form> -->
+
+              <div class="rsa-panels">
+                <div class="rsa-panel">
+                  <div class="rsa-panel-header">
+                    <span class="rsa-icon">&#128100;</span>
+                    <span>Generación de Claves (Alice)</span>
+                  </div>
+                  <p class="rsa-desc">
+                    Genere su par de claves pública y privada. La pública se
+                    comparte, la privada se mantiene en secreto.
+                  </p>
+                  <button id="generar_claves" class="rsa-btn">Generar mis claves</button>
+
+                  <label>Clave Pública</label>
+                  <textarea id="clave_publica" rows="2"></textarea>
+                  <button id="usar_clave_publica" class="rsa-btn rsa-btn-2">
+                    Usar para cifrar <span>&#8594;</span>
+                  </button>
+
+                  <label>Clave Privada</label>
+                  <textarea id="clave_privada" rows="2"></textarea>
+                </div>
+                <div class="rsa-panel">
+                  <div class="rsa-panel-header rsa-panel-header-dark">
+                    <span class="rsa-icon">&#128188;</span>
+                    <span>Registro de antividad</span>
+                  </div>
+                  <div id="registro_log" class="rsa-log"></div>
+                </div>
+              </div>
+
+              <!-- NUEVA SECCIÓN: CIFRADO Y DESCIFRADO -->
+              <div class="rsa-panels" style="margin-top: 2rem">
+                <!-- Panel Cifrado (Bob) -->
+                <div class="rsa-panel">
+                  <div class="rsa-panel-header">
+                    <span class="rsa-icon">&#128273;</span>
+                    <span>Cifrado (Bob)</span>
+                  </div>
+                  <p class="rsa-desc">
+                    Cifre un mensaje usando la clave pública de Alice.
+                  </p>
+                  <label>Texto a cifrar</label>
+                  <textarea
+                    id="texto_cifrar"
+                    rows="2"
+                    placeholder="Su mensaje secreto..."
+                  ></textarea>
+                  <label>Clave Pública del Destinatario (Alice)</label>
+                  <textarea
+                    id="clave_publica_usar"
+                    rows="2"
+                    placeholder="Pegue la clave pública aquí..."
+                  ></textarea>
+                  <button id="cifrar_texto_enviar" class="rsa-btn" style="margin-top: 0.5em">
+                    Cifrar y enviar
+                  </button>
+                  <label>Mensaje Cifrado</label>
+                  <textarea id="mensaje_cifrado" rows="2" placeholder=""></textarea>
+                </div>
+                <!-- Panel Descifrado (Alice) -->
+                <div class="rsa-panel">
+                  <div class="rsa-panel-header">
+                    <span class="rsa-icon">&#128100;</span>
+                    <span>Descifrado (Alice)</span>
+                  </div>
+                  <p class="rsa-desc">
+                    Descifre el mensaje de Bob con su clave privada.
+                  </p>
+                  <label>Mensaje cifrado</label>
+                  <textarea
+                    id="texto_cifrado_a_descifrar"
+                    rows="2"
+                    placeholder="Pegue el texto cifrado aquí..."
+                  ></textarea>
+                  <label>Su Clave Privada</label>
+                  <textarea
+                    id="clave_privada_a_usar"
+                    rows="2"
+                    placeholder="Su clave privada se llenará automáticamente..."
+                  ></textarea>
+                  <button id="descifrar_text_con_clave_privada" class="rsa-btn" style="margin-top: 0.5em">
+                    Descifrar Mensaje
+                  </button>
+                  <label>Mensaje Original</label>
+                  <textarea
+                    id="mensaje_original_descifrado"
+                    rows="2"
+                    placeholder="El mensaje descifrado aparecerá aquí..."
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let btn_popup_menu = document.querySelector(".contenedor_btn");
+      let menu = document.querySelector(".menu");
+
+      btn_popup_menu.onclick = () => {
+        menu.classList.toggle("hiddenMenu");
+      };
+    </script>
+    <script src="../static/js/rsa.js"></script>
+  </body>
+</html>

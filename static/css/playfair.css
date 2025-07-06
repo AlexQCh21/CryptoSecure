@@ -1,0 +1,105 @@
+.playfair-container {
+  font-family: 'Roboto Mono', monospace;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.playfair-container h1 {
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.playfair-hr {
+  margin: 0 auto 2rem auto;
+  border: none;
+  border-top: 2px solid #aaa;
+  width: 90%;
+}
+
+.playfair-panels {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.playfair-panel {
+  background: #405066;
+  border-radius: 8px;
+  padding: 1rem 1rem 1.2rem 1rem;
+  flex: 1 1 340px;
+  min-width: 260px;
+  max-width: 480px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border: 1px solid #aabac8;
+}
+
+.playfair-panel-header {
+  font-weight: 700;
+  font-size: 1.08em;
+  margin-bottom: 0.2em;
+  letter-spacing: 0.5px;
+}
+
+.playfair-panel label {
+  font-size: 0.99em;
+  margin-top: 0.2em;
+}
+
+.playfair-panel textarea {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 6px;
+  border: none;
+  resize: vertical;
+  font-family: 'Roboto Mono', monospace;
+  padding: 0.6em;
+  margin-bottom: 0.2em;
+  font-size: 1em;
+  background: #f8faff;
+  color: #28313a;
+}
+
+.playfair-btn {
+  border: 1px solid #fff;
+  background: #293543;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5em 1.1em;
+  margin: 0.3em 0 0.5em 0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.playfair-btn:hover {
+  background: #232e38;
+}
+
+@media (max-width: 900px) {
+  .playfair-panels {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .playfair-panel {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
