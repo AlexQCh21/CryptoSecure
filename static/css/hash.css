@@ -1,0 +1,123 @@
+.hash-title-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 24px auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.hash-title {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 32px 0 12px 0;
+  text-align: center;
+  font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+}
+.hash-divider {
+  width: 90%;
+  border: none;
+  border-bottom: 2px solid #b2becd50;
+  margin-bottom: 0;
+}
+
+.hash-panels-wrapper {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  max-width: 900px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 2rem;
+  font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+}
+
+.hash-panel {
+  background: #4e6a82;
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 260px;
+  flex: 1 1 320px;
+  max-width: 420px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 12px #0002;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+}
+
+.hash-panel-title {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  font-family: inherit;
+}
+
+.hash-panel label {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+
+.hash-panel textarea {
+  width: 100%;
+  min-height: 44px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  padding: 8px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  resize: vertical;
+  background: #fff;
+  color: #26323b;
+  font-family: inherit;
+  transition: box-shadow 0.2s;
+}
+
+.hash-panel textarea:focus {
+  box-shadow: 0 0 0 2px #26323b60;
+  outline: none;
+}
+
+.hash-btn {
+  background: #26323b;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 10px 18px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background .2s, border .2s;
+  font-family: inherit;
+}
+
+.hash-btn:hover {
+  background: #324050;
+  border: 1px solid #b2becd;
+}
+
+@media (max-width: 860px) {
+  .hash-panels-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .hash-panel {
+    max-width: 100%;
+    width: 100%;
+  }
+}

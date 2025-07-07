@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/index.css" />
-    <link rel="stylesheet" href="../static/css/des.css" />
+    <link rel="stylesheet" href="../static/css/hash.css" />
     <!-- font Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -139,56 +139,24 @@
 
       <!-- contenedor generico -->
       <div class="contenedor">
-        <div class="contenedor_btn" onclick="">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e3e3e3"
-          >
-            <path
-              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-240h560v-400H200v400Zm0 80v80h560v-80H200Zm0 0v80-80Z"
-            />
-          </svg>
+        <div class="contenedor_btns">
+            <button class="hash-btn-selector" data-algoritmo="md5">MD5</button>
+            <button class="hash-btn-selector" data-algoritmo="sha1">SHA-1</button>
+            <button class="hash-btn-selector" data-algoritmo="sha256">SHA-256</button>
+            <button class="hash-btn-selector" data-algoritmo="sha512">SHA-512</button>
         </div>
 
         <div class="contenedor_hijo">
           <div class="contenedor_central">
-            <!--  -->
-            <div class="des-panels-wrapper">
-              <div class="des-title-wrapper">
-                <div class="des-title">DES</div>
-                <hr class="des-divider" />
-              </div>
-              <div class="des-panel">
-                <div class="des-panel-title">Cifrar</div>
-                <label for="textocifrar">Texto a cifrar</label>
-                <textarea id="textocifrar"></textarea>
+            <div class="hash-panel">
+                <div class="hash-panel-title" id="hash-title">Hash MD-5</div>
+                <label for="textoahash">Texto a aplicar hash</label>
+               <textarea id="textoahash" placeholder="Ingrese texto..."></textarea>
+                <button type="button" id="btn-hash" class="hash-btn">Aplicar Hash</button>
 
-                <label for="clavecifrar">Clave (8 caracteres)</label>
-                <textarea id="clavecifrar"></textarea>
-
-                <button type="button" id="btn-cifrar" class="des-btn">Cifrar Texto</button>
-
-                <label for="resultadocifrar">Resultado</label>
-                <textarea id="resultadocifrar"></textarea>
-              </div>
-              <div class="des-panel">
-                <div class="des-panel-title">Descifrar</div>
-                <label for="textodescifrar">Texto a descifrar</label>
-                <textarea id="textodescifrar"></textarea>
-
-                <label for="clavedescifrar">Clave (8 caracteres)</label>
-                <textarea id="clavedescifrar"></textarea>
-
-                <button type="button" id="btn_descifrar" class="des-btn">Descifrar Texto</button>
-
-                <label for="resultadodescifrar">Resultado</label>
-                <textarea id="resultadodescifrar"></textarea>
-              </div>
+                <label for="resultadohash">Resultado</label>
+                <textarea id="resultadohash" rows="2" placeholder="Resultado del hash" readonly></textarea>
             </div>
-            <!--  -->
           </div>
         </div>
       </div>
@@ -203,6 +171,6 @@
       };
     </script>
 
-    <script src="../static/js/des.js"></script>
+    <script src="../static/js/hash.js"></script>
   </body>
 </html>

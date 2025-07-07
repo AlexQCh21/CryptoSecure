@@ -6,7 +6,7 @@ from cryptos.vigenere import vigenere_encrypt, vigenere_decrypt
 from cryptos.playfair import cifrar_playfair, descifrar_playfair
 from cryptos.huffman import compress as huffman_compress, decompress as huffman_decompress, tree_to_dict
 from cryptos.rsa import generar_claves, cifrar as rsa_cifrar, descifrar as rsa_descifrar
-
+from cryptos.hashing import hash_md5, hash_sha1, hash_sha224, hash_sha256, hash_sha384, hash_sha512
 
 app = Flask(__name__)
 CORS(app)
@@ -40,6 +40,10 @@ def show_playfair():
 @app.route('/des')
 def show_des():
     return render_template('des.html')
+
+@app.route('/hash')
+def show_hash():
+    return render_template('hash.html')
 
 # Metodos de cifrado y descifrado
 # DES - cifrado
@@ -226,6 +230,28 @@ def api_rsa_descifrar():
     try:
         texto = rsa_descifrar(cifrado, clave_privada)
         return jsonify({'texto': texto})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
+@app.route('/api/hash', methods=['POST'])
+def api_hash_texto():
+    data = request.get_json()
+    texto = data.get('texto', '')
+    metodo = data.get('metodo','').lower()
+
+    hash_funcs = {
+        'md5': hash_md5,
+        'sha1': hash_sha1,
+        'sha256':hash_sha256,
+        'sha512': hash_sha512,
+    }
+
+    if metodo not in hash_funcs:
+        return jsonify({'error': f'Método hash no soportado: {metodo}'}), 400
+    
+    try:
+        hash_result = hash_funcs[metodo](texto)
+        return jsonify({'hash':hash_result})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
