@@ -172,10 +172,13 @@
                     placeholder="Ingrese el texto a cifrar..."
                   ></textarea>
                   <label>Desplazamiento</label>
-                  <textarea
-                    rows="2"
+                  <input
+                    id="ta_desplazamiento_One"
+                    type="number"
+                    min="1"
+                    step="1"
                     placeholder="Ingrese el desplazamiento..."
-                  ></textarea>
+                  ></input>
                   <button id="btn_cifrar" class="cesar-btn">Cifrar Texto</button>
                   <label>Resultado</label>
                   <textarea
@@ -195,11 +198,13 @@
                     placeholder="Ingrese el texto a descifrar..."
                   ></textarea>
                   <label>Desplazamiento</label>
-                  <textarea
-                   id="ta_desplazamiento"
-                    rows="2"
+                  <input
+                    id="ta_desplazamiento_Two"
+                    type="number"
+                    min="1"
+                    step="1"
                     placeholder="Ingrese el desplazamiento..."
-                  ></textarea>
+                  ></input>
                   <button id="btn_descifrar" class="cesar-btn">Descifrar Texto</button>
                   <label>Resultado</label>
                   <textarea

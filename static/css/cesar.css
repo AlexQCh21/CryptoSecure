@@ -73,6 +73,19 @@
   color: #28313a;
 }
 
+.cesar-panel input {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 6px;
+  border: none;
+  resize: vertical;
+  font-family: 'Roboto Mono', monospace;
+  padding: 0.6em;
+  margin-bottom: 0.2em;
+  font-size: 1em;
+  background: #f8faff;
+  color: #28313a;
+}
 .cesar-btn {
   border: 1px solid #fff;
   background: #293543;

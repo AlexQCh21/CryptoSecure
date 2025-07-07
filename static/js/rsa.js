@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     registroLog.innerHTML = `<div>[${fecha}] ${mensaje}</div>` + registroLog.innerHTML;
   }
 
+  let clavePrivadaGenerada = '';
   // 1. GENERAR CLAVES
   if (btnGenerarClaves) {
     btnGenerarClaves.addEventListener('click', async function () {
@@ -29,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const data = await res.json();
         if (data.clave_publica && data.clave_privada) {
           txtClavePublica.value = data.clave_publica;
-          txtClavePrivada.value = data.clave_privada;
+          txtClavePrivada.value = 'Clave privada generada con éxito';
+          clavePrivadaGenerada = data.clave_privada;
           addLog('Claves generadas correctamente.');
         } else {
           addLog('Error: ' + (data.error || 'No se pudo generar las claves'));
@@ -83,12 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
   if (btnDescifrar) {
     btnDescifrar.addEventListener('click', async function () {
       const cifrado = txtTextoCifradoADescifrar.value;
-      const clavePriv = txtClavePrivadaAUsar.value;
+      const clavePriv = clavePrivadaGenerada;
       if (!cifrado || !clavePriv) {
         addLog('Debe ingresar el mensaje cifrado y su clave privada.');
         return;
       }
-      addLog('Descifrando mensaje...');
+      addLog('Descifrando mensaje utilizando la clave pública de BOB...');
       try {
         const res = await fetch('/api/rsa/descifrar', {
           method: 'POST',

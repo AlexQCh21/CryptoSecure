@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="contenedor_general">
-      <!-- menu -->
+     <!-- menu -->
       <div class="menu">
         <ul class="contenedor_menu">
           <li id="head_menu">CryptoSecure</li>
@@ -39,77 +39,100 @@
               <div class="title">RSA</div>
             </li>
           </a>
+          <div class="categoria">Clásica</div>
+           <a href="{{ url_for('show_cesar') }}">
+          <li>
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
+              >
+                <path
+                  d="M200-160q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h160v80H200v480h160v80H200Zm240 80v-800h80v80h240q33 0 56.5 23.5T840-720v480q0 33-23.5 56.5T760-160H520v80h-80Zm80-160h240v-480H520v480Zm-320 0v-480 480Zm560 0v-480 480Z"
+                />
+              </svg>
+            </div>
+            <div class="title">Cesar</div>
+          </li>
+          </a>
+          <a href="{{ url_for('show_playfair') }}">
+          <li>
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
+              >
+                <path
+                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"
+                />
+              </svg>
+            </div>
+            <div class="title">Playfair</div>
+          </li>
+          </a>
+
+          <a href="{{ url_for('show_vigenere') }}">
+          <li>
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
+              >
+                <path
+                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"
+                />
+              </svg>
+            </div>
+            <div class="title">Vigenere</div>
+          </li>
+          </a>
+
           <div class="categoria">Simétrica</div>
 
-          <a href="{{ url_for('show_cesar') }}">
-            <li>
-              <div class="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e3e3e3"
-                >
-                  <path
-                    d="M200-160q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h160v80H200v480h160v80H200Zm240 80v-800h80v80h240q33 0 56.5 23.5T840-720v480q0 33-23.5 56.5T760-160H520v80h-80Zm80-160h240v-480H520v480Zm-320 0v-480 480Zm560 0v-480 480Z"
-                  />
-                </svg>
-              </div>
-              <div class="title">Cesar</div>
-            </li>
-          </a>
 
-          <a href="{{ url_for('show_playfair') }}">
-            <li>
-              <div class="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e3e3e3"
-                >
-                  <path
-                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"
-                  />
-                </svg>
-              </div>
-              <div class="title">Playfair</div>
-            </li>
-          </a>
+
+
 
           <a href="{{ url_for('show_des') }}">
-            <li>
-              <div class="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e3e3e3"
-                >
-                  <path
-                    d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"
-                  />
-                </svg>
-              </div>
-              <div class="title">DES</div>
-            </li>
+          <li>
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
+              >
+                <path
+                  d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"
+                />
+              </svg>
+            </div>
+            <div class="title">DES</div>
+          </li>
           </a>
-
+          
           <div class="categoria">Compresión</div>
 
           <a href="{{ url_for('show_huffman') }}">
             <li>
-              <div class="icon icon_h">
-                <div class="numer">1</div>
-                <div class="numer">0</div>
-                <div class="numer">0</div>
-                <div class="numer">1</div>
-              </div>
-              <div class="title">Huffman</div>
-            </li>
+            <div class="icon icon_h">
+              <div class="numer">1</div>
+              <div class="numer">0</div>
+              <div class="numer">0</div>
+              <div class="numer">1</div>
+            </div>
+            <div class="title">Huffman</div>
+          </li>
           </a>
         </ul>
       </div>
@@ -147,7 +170,7 @@
                 <div class="rsa-panel">
                   <div class="rsa-panel-header">
                     <span class="rsa-icon">&#128100;</span>
-                    <span>Generación de Claves (Alice)</span>
+                    <span>Generación de Claves Bob</span>
                   </div>
                   <p class="rsa-desc">
                     Genere su par de claves pública y privada. La pública se
@@ -164,13 +187,9 @@
                   <label>Clave Privada</label>
                   <textarea id="clave_privada" rows="2"></textarea>
                 </div>
-                <div class="rsa-panel">
-                  <div class="rsa-panel-header rsa-panel-header-dark">
-                    <span class="rsa-icon">&#128188;</span>
-                    <span>Registro de antividad</span>
-                  </div>
-                  <div id="registro_log" class="rsa-log"></div>
-                </div>
+
+                
+
               </div>
 
               <!-- NUEVA SECCIÓN: CIFRADO Y DESCIFRADO -->
@@ -179,10 +198,10 @@
                 <div class="rsa-panel">
                   <div class="rsa-panel-header">
                     <span class="rsa-icon">&#128273;</span>
-                    <span>Cifrado (Bob)</span>
+                    <span>Cifrado (Alice)</span>
                   </div>
                   <p class="rsa-desc">
-                    Cifre un mensaje usando la clave pública de Alice.
+                    Cifre un mensaje usando la clave pública de Bob.
                   </p>
                   <label>Texto a cifrar</label>
                   <textarea
@@ -206,22 +225,16 @@
                 <div class="rsa-panel">
                   <div class="rsa-panel-header">
                     <span class="rsa-icon">&#128100;</span>
-                    <span>Descifrado (Alice)</span>
+                    <span>Descifrado (Bob)</span>
                   </div>
                   <p class="rsa-desc">
-                    Descifre el mensaje de Bob con su clave privada.
+                    Descifre el mensaje de Alice usando su clave privada.
                   </p>
                   <label>Mensaje cifrado</label>
                   <textarea
                     id="texto_cifrado_a_descifrar"
                     rows="2"
                     placeholder="Pegue el texto cifrado aquí..."
-                  ></textarea>
-                  <label>Su Clave Privada</label>
-                  <textarea
-                    id="clave_privada_a_usar"
-                    rows="2"
-                    placeholder="Su clave privada se llenará automáticamente..."
                   ></textarea>
                   <button id="descifrar_text_con_clave_privada" class="rsa-btn" style="margin-top: 0.5em">
                     Descifrar Mensaje
@@ -234,8 +247,14 @@
                   ></textarea>
                 </div>
               </div>
+              <div class="rsa-panel">
+                  <div class="rsa-panel-header rsa-panel-header-dark">
+                    <span class="rsa-icon">&#128188;</span>
+                    <span>Registro de antividad</span>
+                  </div>
+                <div id="registro_log" class="rsa-log"></div>
+              </div>
             </div>
-            <!--  -->
           </div>
         </div>
       </div>

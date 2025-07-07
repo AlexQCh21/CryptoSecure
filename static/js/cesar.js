@@ -3,19 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!panel) return;
   const btnCifrar = panel.querySelector('#btn_cifrar');
   const inputTexto = panel.querySelectorAll('textarea')[0]; // Primer textarea
-  const inputDesplazamiento = panel.querySelectorAll('textarea')[1]; // Segundo textarea
-  const resultadoBox = panel.querySelectorAll('textarea')[2]; // Tercer textarea
+  const inputDesplazamiento = panel.querySelector('input[type="number"]'); // Segundo textarea
+  const resultadoBox = panel.querySelectorAll('textarea')[1]; // Tercer textarea
 
   btnCifrar.addEventListener('click', async function() {
     const texto = inputTexto.value;
-    const desplazamiento = inputDesplazamiento.value.trim();
+    const desplazamiento = inputDesplazamiento.value;
     resultadoBox.value = 'Cifrando...';
 
-    if (!desplazamiento.match(/^-?\d+$/)) {
-      resultadoBox.value = 'El desplazamiento debe ser un número entero.';
+      if (inputDesplazamiento.validity.badInput || inputDesplazamiento.value === '' || parseInt(desplazamiento) < 1) {
+      resultadoBox.value = 'Debe ingresar un número natural válido.';
       return;
     }
-
     try {
       const response = await fetch('/api/cifrar_cesar', {
         method: 'POST',
@@ -36,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
    // Para descifrar
   const btnDescifrar = document.getElementById('btn_descifrar');
   const inputTextoDescifrar = document.getElementById('ta_descifrar');
-  const inputDesplazamientoDescifrar = document.getElementById('ta_desplazamiento');
+  const inputDesplazamientoDescifrar = document.getElementById('ta_desplazamiento_Two');
   // El resultado es el siguiente textarea después del botón
   const resultadoBoxDescifrar = btnDescifrar
-    ? btnDescifrar.parentElement.querySelectorAll('textarea')[2]
+    ? btnDescifrar.parentElement.querySelectorAll('textarea')[1]
     : null;
 
   if (btnDescifrar && inputTextoDescifrar && inputDesplazamientoDescifrar && resultadoBoxDescifrar) {
@@ -48,10 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const desplazamiento = inputDesplazamientoDescifrar.value.trim();
       resultadoBoxDescifrar.value = 'Descifrando...';
 
-      if (!desplazamiento.match(/^-?\d+$/)) {
-        resultadoBoxDescifrar.value = 'El desplazamiento debe ser un número entero.';
+      if (inputDesplazamiento.validity.badInput || inputDesplazamiento.value === '' || parseInt(desplazamiento) < 1) {
+        resultadoBox.value = 'Debe ingresar un número natural válido.';
         return;
       }
+
 
       try {
         const response = await fetch('/api/descifrar_cesar', {
