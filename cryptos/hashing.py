@@ -1,22 +1,35 @@
 import hashlib
 
-def hash_md5(texto: str) -> str:
-    return hashlib.md5(texto.encode()).hexdigest()
+def hash_md5(data) -> str:
+    if isinstance(data, str):
+        data = data.encode()
+    return hashlib.md5(data).hexdigest()
 
-def hash_sha1(texto: str) -> str:
-    return hashlib.sha1(texto.encode()).hexdigest()
+def hash_sha1(data) -> str:
+    if isinstance(data, str):
+        data = data.encode()
+    return hashlib.sha1(data).hexdigest()
 
-def hash_sha224(texto: str) -> str:
-    return hashlib.sha224(texto.encode()).hexdigest()
+def hash_sha224(data) -> str:
+    if isinstance(data, str):
+        data = data.encode()
+    return hashlib.sha224(data).hexdigest()
 
-def hash_sha256(texto: str) -> str:
-    return hashlib.sha256(texto.encode()).hexdigest()
+def hash_sha256(data) -> str:
+    if isinstance(data, str):
+        data = data.encode()
+    return hashlib.sha256(data).hexdigest()
 
-def hash_sha384(texto: str) -> str:
-    return hashlib.sha384(texto.encode()).hexdigest()
+def hash_sha384(data) -> str:
+    if isinstance(data, str):
+        data = data.encode()
+    return hashlib.sha384(data).hexdigest()
 
-def hash_sha512(texto: str) -> str:
-    return hashlib.sha512(texto.encode()).hexdigest()
+def hash_sha512(data) -> str:
+    if isinstance(data, str):
+        data = data.encode()
+    return hashlib.sha512(data).hexdigest()
+
 
 mensaje = "hola mundo"
 print("MD5:", hash_md5(mensaje))

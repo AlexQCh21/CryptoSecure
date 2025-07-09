@@ -254,6 +254,38 @@ def api_hash_texto():
         return jsonify({'hash':hash_result})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
+    
+# Aplicar hash a una img
+@app.route('/api/hash_imagen', methods=['POST'])
+def api_hash_imagen():
+    if 'imagen' not in request.files:
+        return jsonify({'error': 'No se ha enviado ninguna imagen'}), 400
+
+    imagen = request.files['imagen']
+    metodo = request.form.get('metodo', '').lower()
+
+    hash_funcs = {
+        'md5': hash_md5,
+        'sha1': hash_sha1,
+        'sha224': hash_sha224,
+        'sha256': hash_sha256,
+        'sha384': hash_sha384,
+        'sha512': hash_sha512,
+    }
+
+    if metodo not in hash_funcs:
+        return jsonify({'error': f'Método hash no soportado: {metodo}'}), 400
+
+    try:
+        # Leer bytes de la imagen
+        img_bytes = imagen.read()
+        # Calcular hash
+        hash_result = hash_funcs[metodo](img_bytes)
+        return jsonify({'hash': hash_result})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 
 
 if __name__=='__main__':

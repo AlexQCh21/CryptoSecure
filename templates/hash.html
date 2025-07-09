@@ -38,7 +38,7 @@
         <div class="contenedor_hijo">
           <div class="contenedor_central">
             <div class="contenedor_btns">
-              <button class="hash-btn-selector" data-algoritmo="md5">
+              <button class="hash-btn-selector seleted_btn" data-algoritmo="md5">
                 MD5
               </button>
               <button class="hash-btn-selector" data-algoritmo="sha1">
@@ -52,24 +52,44 @@
               </button>
             </div>
 
-            <div class="hash-panel">
-              <div class="hash-panel-title" id="hash-title">Hash MD-5</div>
-              <label for="textoahash">Texto a aplicar hash</label>
-              <textarea
-                id="textoahash"
-                placeholder="Ingrese texto..."
-              ></textarea>
-              <button type="button" id="btn-hash" class="hash-btn">
-                Aplicar Hash
-              </button>
+            <div class="hash_padre">
+              <div class="hash-panel">
+                <div class="hash-panel-title" id="hash-title">Hash MD-5</div>
+                <label for="textoahash">Texto a aplicar hash</label>
+                <textarea
+                  id="textoahash"
+                  placeholder="Ingrese texto..."
+                ></textarea>
+                <button type="button" id="btn-hash" class="hash-btn">
+                  Aplicar Hash
+                </button>
 
-              <label for="resultadohash">Resultado</label>
-              <textarea
-                id="resultadohash"
-                rows="2"
-                placeholder="Resultado del hash"
-                readonly
-              ></textarea>
+                <label for="resultadohash">Resultado</label>
+                <textarea
+                  id="resultadohash"
+                  rows="2"
+                  placeholder="Resultado del hash"
+                  readonly
+                ></textarea>
+              </div>
+
+              <div class="img-panel">
+                <!-- Sección de archivos -->
+                <div class="hash-panel-title"
+                  >Hash de Imagen</div
+                >
+                <input id="file_img" type="file" accept="image/*" />
+                <button id="btn_comprimir_imagen" class="huffman-btn hash-btn">
+                  Obtener hash
+                </button>
+
+                <label for="resultadohash_img">Resultado</label>
+                <textarea
+                  id="resultadohash_img"
+                  rows="4"
+                  placeholder="Resultado del hash"
+                  readonly></textarea>
+              </div>
             </div>
           </div>
         </div>
@@ -83,6 +103,8 @@
       btn_popup_menu.onclick = () => {
         menu.classList.toggle("hiddenMenu");
       };
+
+
     </script>
 
     <script src="../static/js/hash.js"></script>
