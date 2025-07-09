@@ -16,126 +16,8 @@
   </head>
   <body>
     <div class="contenedor_general">
-     <!-- menu -->
-      <div class="menu">
-        <ul class="contenedor_menu">
-          <li id="head_menu">CryptoSecure</li>
-          <div class="categoria">Asimétrico</div>
-          <a href="{{ url_for('show_rsa') }}">
-            <li>
-              <div class="icon icon_rotate">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e3e3e3"
-                >
-                  <path
-                    d="M280-400q-33 0-56.5-23.5T200-480q0-33 23.5-56.5T280-560q33 0 56.5 23.5T360-480q0 33-23.5 56.5T280-400Zm0 160q-100 0-170-70T40-480q0-100 70-170t170-70q67 0 121.5 33t86.5 87h352l120 120-180 180-80-60-80 60-85-60h-47q-32 54-86.5 87T280-240Zm0-80q56 0 98.5-34t56.5-86h125l58 41 82-61 71 55 75-75-40-40H435q-14-52-56.5-86T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Z"
-                  />
-                </svg>
-              </div>
-              <div class="title">RSA</div>
-            </li>
-          </a>
-          <div class="categoria">Clásica</div>
-           <a href="{{ url_for('show_cesar') }}">
-          <li>
-            <div class="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e3e3e3"
-              >
-                <path
-                  d="M200-160q-33 0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h160v80H200v480h160v80H200Zm240 80v-800h80v80h240q33 0 56.5 23.5T840-720v480q0 33-23.5 56.5T760-160H520v80h-80Zm80-160h240v-480H520v480Zm-320 0v-480 480Zm560 0v-480 480Z"
-                />
-              </svg>
-            </div>
-            <div class="title">Cesar</div>
-          </li>
-          </a>
-          <a href="{{ url_for('show_playfair') }}">
-          <li>
-            <div class="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e3e3e3"
-              >
-                <path
-                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"
-                />
-              </svg>
-            </div>
-            <div class="title">Playfair</div>
-          </li>
-          </a>
-
-          <a href="{{ url_for('show_vigenere') }}">
-          <li>
-            <div class="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e3e3e3"
-              >
-                <path
-                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"
-                />
-              </svg>
-            </div>
-            <div class="title">Vigenere</div>
-          </li>
-          </a>
-
-          <div class="categoria">Simétrica</div>
-
-
-
-
-
-          <a href="{{ url_for('show_des') }}">
-          <li>
-            <div class="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e3e3e3"
-              >
-                <path
-                  d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"
-                />
-              </svg>
-            </div>
-            <div class="title">DES</div>
-          </li>
-          </a>
-          
-          <div class="categoria">Compresión</div>
-
-          <a href="{{ url_for('show_huffman') }}">
-            <li>
-            <div class="icon icon_h">
-              <div class="numer">1</div>
-              <div class="numer">0</div>
-              <div class="numer">0</div>
-              <div class="numer">1</div>
-            </div>
-            <div class="title">Huffman</div>
-          </li>
-          </a>
-        </ul>
-      </div>
+      <!-- menu -->
+      {% include 'menu.html' %}
 
       <!-- contenedor generico -->
       <div class="contenedor">
@@ -169,14 +51,26 @@
               <div class="rsa-panels">
                 <div class="rsa-panel">
                   <div class="rsa-panel-header">
-                    <span class="rsa-icon">&#128100;</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e3e3e3"
+                    >
+                      <path
+                        d="M420-360h120l-23-129q20-10 31.5-29t11.5-42q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 23 11.5 42t31.5 29l-23 129Zm60 280q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"
+                      />
+                    </svg>
                     <span>Generación de Claves Bob</span>
                   </div>
                   <p class="rsa-desc">
                     Genere su par de claves pública y privada. La pública se
                     comparte, la privada se mantiene en secreto.
                   </p>
-                  <button id="generar_claves" class="rsa-btn">Generar mis claves</button>
+                  <button id="generar_claves" class="rsa-btn">
+                    Generar mis claves
+                  </button>
 
                   <label>Clave Pública</label>
                   <textarea id="clave_publica" rows="2"></textarea>
@@ -187,9 +81,6 @@
                   <label>Clave Privada</label>
                   <textarea id="clave_privada" rows="2"></textarea>
                 </div>
-
-                
-
               </div>
 
               <!-- NUEVA SECCIÓN: CIFRADO Y DESCIFRADO -->
@@ -197,7 +88,17 @@
                 <!-- Panel Cifrado (Bob) -->
                 <div class="rsa-panel">
                   <div class="rsa-panel-header">
-                    <span class="rsa-icon">&#128273;</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e3e3e3"
+                    >
+                      <path
+                        d="M280-400q-33 0-56.5-23.5T200-480q0-33 23.5-56.5T280-560q33 0 56.5 23.5T360-480q0 33-23.5 56.5T280-400Zm0 160q-100 0-170-70T40-480q0-100 70-170t170-70q67 0 121.5 33t86.5 87h352l120 120-180 180-80-60-80 60-85-60h-47q-32 54-86.5 87T280-240Zm0-80q56 0 98.5-34t56.5-86h125l58 41 82-61 71 55 75-75-40-40H435q-14-52-56.5-86T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Z"
+                      />
+                    </svg>
                     <span>Cifrado (Alice)</span>
                   </div>
                   <p class="rsa-desc">
@@ -215,16 +116,34 @@
                     rows="2"
                     placeholder="Pegue la clave pública aquí..."
                   ></textarea>
-                  <button id="cifrar_texto_enviar" class="rsa-btn" style="margin-top: 0.5em">
+                  <button
+                    id="cifrar_texto_enviar"
+                    class="rsa-btn"
+                    style="margin-top: 0.5em"
+                  >
                     Cifrar y enviar
                   </button>
                   <label>Mensaje Cifrado</label>
-                  <textarea id="mensaje_cifrado" rows="2" placeholder=""></textarea>
+                  <textarea
+                    id="mensaje_cifrado"
+                    rows="2"
+                    placeholder=""
+                  ></textarea>
                 </div>
                 <!-- Panel Descifrado (Alice) -->
                 <div class="rsa-panel">
                   <div class="rsa-panel-header">
-                    <span class="rsa-icon">&#128100;</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#e3e3e3"
+                    >
+                      <path
+                        d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"
+                      />
+                    </svg>
                     <span>Descifrado (Bob)</span>
                   </div>
                   <p class="rsa-desc">
@@ -236,7 +155,11 @@
                     rows="2"
                     placeholder="Pegue el texto cifrado aquí..."
                   ></textarea>
-                  <button id="descifrar_text_con_clave_privada" class="rsa-btn" style="margin-top: 0.5em">
+                  <button
+                    id="descifrar_text_con_clave_privada"
+                    class="rsa-btn"
+                    style="margin-top: 0.5em"
+                  >
                     Descifrar Mensaje
                   </button>
                   <label>Mensaje Original</label>
@@ -248,10 +171,20 @@
                 </div>
               </div>
               <div class="rsa-panel">
-                  <div class="rsa-panel-header rsa-panel-header-dark">
-                    <span class="rsa-icon">&#128188;</span>
-                    <span>Registro de antividad</span>
-                  </div>
+                <div class="rsa-panel-header rsa-panel-header-dark">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e3e3e3"
+                  >
+                    <path
+                      d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"
+                    />
+                  </svg>
+                  <span>Registro de antividad</span>
+                </div>
                 <div id="registro_log" class="rsa-log"></div>
               </div>
             </div>

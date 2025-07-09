@@ -37,15 +37,16 @@
 }
 
 .hash-panel {
-  background: #4e6a82;
+  background: #405066;
+  border: 1px solid #aabac8;
   border-radius: 8px;
   padding: 24px;
   min-width: 260px;
   flex: 1 1 320px;
   max-width: 420px;
   box-sizing: border-box;
-  box-shadow: 0 2px 12px #0002;
-  margin-bottom: 32px;
+  box-shadow: 0 2px 12px #0002;  
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -120,4 +121,29 @@
     max-width: 100%;
     width: 100%;
   }
+}
+
+.contenedor_btns{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem 0;
+  
+}
+
+.hash-btn-selector{
+  color: #FFFFFF91;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #FFFFFF11;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  padding: .5rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+
+.hash-btn-selector:hover{
+  background-color: #00000051;
 }

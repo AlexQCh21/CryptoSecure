@@ -19,12 +19,13 @@
 }
 
 .contenedor_general .menu {
-  display: flex;
+  /* display: flex; */
   transition: all 0.5s cubic-bezier(.4,2,.3,1);
   overflow: hidden;
   flex: 0 0 300px;
   justify-content: center;
   overflow: hidden;
+  height: 100vh;
 }
 
 .hiddenMenu {
@@ -44,7 +45,9 @@
   border-radius: 20px;
   list-style: none;
   overflow: hidden;
-  max-height: 500px;
+  margin: 2rem auto;
+  padding-bottom: .5rem;
+  /* max-height: 600px; */
 }
 
 .contenedor_general .menu .contenedor_menu li{
@@ -236,8 +239,9 @@ a{
   color: #CECECE;
   font-size: 1rem;
   padding-left: 1rem;
-  border-bottom: 1px solid #fafafa;
-  margin: 1rem 0;
+  border-bottom: 1px solid #fafafa31;
+  padding-bottom: .5rem;
+  margin: 1rem .5rem;
 }
 
 @keyframes typing {

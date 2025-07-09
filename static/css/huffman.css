@@ -111,3 +111,7 @@
     max-width: 100%;
   }
 }
+
+#arbol_huffman{
+  overflow: auto;
+}

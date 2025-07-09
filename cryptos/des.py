@@ -1,4 +1,4 @@
-from Cryptodome.Cipher import DES
+from Crypto.Cipher import DES
 import base64
 
 def pad(text):

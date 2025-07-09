@@ -37,7 +37,8 @@
 }
 
 .des-panel {
-  background: #4e6a82;
+  background: #405066;
+  border: 1px solid #aabac8;
   border-radius: 8px;
   padding: 24px;
   min-width: 260px;
